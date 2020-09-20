@@ -1,0 +1,89 @@
+:root {
+  --purple: #4f5fb8;
+  --hover-drag: #97bef4;
+  --space: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  background-color: var(--purple);
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid var(--purple);
+  padding: 2rem;
+  width: 90%;
+  text-align: center;
+  max-width: 500px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #4f4f4f;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1rem;
+  color: #828282;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.drag {
+  background: #f6f8fb;
+  border: 1px dashed #828282;
+  border-radius: 12px;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.drag.hover {
+  border-color: #97bef4;
+  cursor: grab;
+}
+
+.drag img {
+  width: 125px;
+  opacity: 0.5;
+  margin-bottom: 1.5rem;
+}
+
+.drag span {
+  color: #bdbdbd;
+  font-weight: 400;
+}
+
+span.or {
+  color: #bdbdbd;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.button {
+  background: #2f80ed;
+  border-radius: 8px;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #ffff;
+}
