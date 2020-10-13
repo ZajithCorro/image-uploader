@@ -24,7 +24,10 @@ export default function Card({ setImage }) {
       setImage(undefined);
     } else {
       setError('');
-      handleFile(files[0], setImage, setImagePreview);
+      handleFile(files[0]).then((image) => {
+        setImage(image);
+        setImagePreview(image);
+      });
     }
   };
 
@@ -52,7 +55,12 @@ export default function Card({ setImage }) {
       setImage(undefined);
     } else {
       setError('');
-      handleFile(files, setImage, setImagePreview);
+      handleFile(files)
+        .then((image) => {
+          setImage(image);
+          setImagePreview(image);
+        })
+        .catch(console.log);
     }
   };
 

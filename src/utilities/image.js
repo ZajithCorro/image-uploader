@@ -1,9 +1,14 @@
-export function handleFile(file, setImage, setPreview) {
-  let reader = new FileReader();
-  reader.readAsDataURL(file);
+export function handleFile(file) {
+  return new Promise((resolve, reject) => {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
 
-  reader.onloadend = () => {
-    setImage(reader.result);
-    setPreview(reader.result);
-  };
+    reader.onloadend = () => {
+      resolve(reader.result);
+    };
+
+    reader.onerror = () => {
+      reject('Error al cargar la imagen');
+    };
+  });
 }
